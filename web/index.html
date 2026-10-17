@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>Connecting...</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="scene" aria-hidden="true">
+        <div id="background-a" class="scene__background is-visible"></div>
+        <div id="background-b" class="scene__background"></div>
+        <video id="background-video" class="scene__video" muted loop playsinline></video>
+        <div class="scene__scrim"></div>
+        <div class="scene__grid"></div>
+        <div class="scene__glow scene__glow--one"></div>
+        <div class="scene__glow scene__glow--two"></div>
+        <div class="scene__grain"></div>
+    </div>
+
+    <main class="shell">
+        <header class="topbar">
+            <div class="status-pill">
+                <span class="status-pill__dot"></span>
+                <span id="status-label">Establishing connection</span>
+            </div>
+            <nav id="social-links" class="social-links" aria-label="Server links"></nav>
+        </header>
+
+        <section class="content">
+            <div class="hero">
+                <div class="brand-lockup">
+                    <img id="server-logo" class="brand-lockup__logo" src="assets/logo-placeholder.svg" alt="Server logo">
+                    <div>
+                        <p id="server-short-name" class="eyebrow">HSC</p>
+                        <h1 id="server-name">Your Server</h1>
+                    </div>
+                </div>
+
+                <p id="server-tagline" class="hero__tagline">Your story starts here.</p>
+                <p id="server-description" class="hero__description">
+                    A premium roleplay experience built around community, quality, and unforgettable stories.
+                </p>
+
+                <div class="progress-card">
+                    <div class="progress-card__header">
+                        <div>
+                            <span class="progress-card__kicker">Loading game assets</span>
+                            <span id="loading-message" class="progress-card__message">Preparing your session</span>
+                        </div>
+                        <strong id="progress-percent" class="progress-card__percent">0%</strong>
+                    </div>
+                    <div
+                        id="progress-track"
+                        class="progress-track"
+                        role="progressbar"
+                        aria-label="Loading progress"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow="0"
+                    >
+                        <span id="progress-fill" class="progress-track__fill"></span>
+                        <span class="progress-track__shine"></span>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <span class="tip-card__icon" aria-hidden="true">i</span>
+                    <div>
+                        <span class="tip-card__label">Community tip</span>
+                        <p id="tip-text">Respect every player and help create scenes everyone can enjoy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="info-card">
+                <div class="info-card__topline">
+                    <span>Server briefing</span>
+                    <span id="panel-count">01 / 04</span>
+                </div>
+                <div id="panel-content" class="info-card__content" aria-live="polite"></div>
+                <div id="panel-tabs" class="info-card__tabs" role="tablist" aria-label="Server information"></div>
+            </aside>
+        </section>
+
+        <footer class="footer">
+            <div id="music-player" class="music-player" hidden>
+                <button id="previous-track" class="icon-button" type="button" aria-label="Previous track">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6V5Zm3 7 10-7v14L9 12Z"/></svg>
+                </button>
+                <button id="toggle-play" class="icon-button icon-button--primary" type="button" aria-label="Play music">
+                    <svg id="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z"/></svg>
+                    <svg id="pause-icon" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z"/></svg>
+                </button>
+                <button id="next-track" class="icon-button" type="button" aria-label="Next track">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2V5ZM5 5l10 7-10 7V5Z"/></svg>
+                </button>
+                <div class="music-player__meta">
+                    <span class="music-player__label">Now playing</span>
+                    <strong id="track-title">No track selected</strong>
+                    <span id="music-status" class="music-player__status" role="status" aria-live="polite">Ready to play</span>
+                </div>
+                <button id="toggle-mute" class="icon-button" type="button" aria-label="Mute music">
+                    <svg id="volume-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a4.5 4.5 0 0 0-2.1-3.8v7.6a4.5 4.5 0 0 0 2.1-3.8Zm-2.1-8.2v2.1a7 7 0 0 1 0 12.2v2.1a9 9 0 0 0 0-16.4Z"/></svg>
+                    <svg id="mute-icon" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M4 9v6h4l5 4V5L8 9H4Zm11.5 1.6L18.1 8l1.4 1.4-2.6 2.6 2.6 2.6-1.4 1.4-2.6-2.6-2.6 2.6-1.4-1.4 2.6-2.6-2.6-2.6 1.4-1.4 2.6 2.6Z"/></svg>
+                </button>
+                <input id="volume-slider" class="volume-slider" type="range" min="0" max="100" value="35" aria-label="Music volume">
+            </div>
+
+            <div class="footer__meta">
+                <span id="keyboard-hint" class="keyboard-hint" hidden><kbd>SPACE</kbd> music <kbd>M</kbd> mute</span>
+                <span id="powered-by" class="powered-by">Powered by Hotspot Creations</span>
+            </div>
+        </footer>
+    </main>
+
+    <noscript>This loading screen requires JavaScript to display correctly.</noscript>
+</body>
+</html>

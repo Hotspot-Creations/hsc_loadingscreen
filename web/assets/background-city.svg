@@ -1,0 +1,45 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="960" y1="0" x2="960" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121827"/>
+      <stop offset="0.48" stop-color="#0B0E15"/>
+      <stop offset="1" stop-color="#050608"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1" gradientTransform="translate(1535 305) rotate(128) scale(460 600)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF3B30" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#FF3B30" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="road" x1="1450" y1="620" x2="990" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B1014"/>
+      <stop offset="1" stop-color="#07080B"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <rect width="1920" height="1080" fill="url(#sun)"/>
+  <g opacity="0.18" stroke="#D9E2FF">
+    <path d="M0 185h1920M0 333h1920M0 481h1920M0 629h1920"/>
+    <path d="M1110 0v720M1330 0v720M1550 0v720M1770 0v720"/>
+  </g>
+  <g fill="#090C12">
+    <path d="M945 666V392h132v274H945Z"/>
+    <path d="M1097 666V256h206v410h-206Z"/>
+    <path d="M1323 666V358h137v308h-137Z"/>
+    <path d="M1482 666V198h214v468h-214Z"/>
+    <path d="M1718 666V314h202v352h-202Z"/>
+  </g>
+  <g fill="#FF9A5C" opacity="0.34">
+    <rect x="1140" y="306" width="16" height="5" rx="2.5"/><rect x="1184" y="306" width="16" height="5" rx="2.5"/>
+    <rect x="1140" y="343" width="16" height="5" rx="2.5"/><rect x="1231" y="343" width="16" height="5" rx="2.5"/>
+    <rect x="1531" y="255" width="18" height="6" rx="3"/><rect x="1583" y="255" width="18" height="6" rx="3"/><rect x="1635" y="255" width="18" height="6" rx="3"/>
+    <rect x="1531" y="302" width="18" height="6" rx="3"/><rect x="1635" y="302" width="18" height="6" rx="3"/>
+    <rect x="1531" y="349" width="18" height="6" rx="3"/><rect x="1583" y="349" width="18" height="6" rx="3"/>
+    <rect x="1757" y="370" width="17" height="5" rx="2.5"/><rect x="1805" y="370" width="17" height="5" rx="2.5"/>
+  </g>
+  <path d="M716 1080 1275 630h645v450H716Z" fill="url(#road)"/>
+  <path d="m1045 1080 346-450h79l-222 450h-203Z" fill="#171A21"/>
+  <path d="m1390 1080 155-450h43l-16 450h-182Z" fill="#0C0E13"/>
+  <path d="m1234 1025 63-89h22l-44 89h-41ZM1354 848l35-53h16l-27 53h-24ZM1438 721l20-31h11l-17 31h-14Z" fill="#FFE6A6" opacity="0.75" filter="url(#blur)"/>
+  <path d="M0 808c333-112 612-135 903-80 98 19 193 56 277 112L955 1080H0V808Z" fill="#07090D"/>
+  <path d="M0 887c341-113 650-115 948-5" stroke="#212837" stroke-width="3" opacity="0.55"/>
+</svg>
